@@ -185,7 +185,7 @@
         "m3.xlarge"
       ],
       "ConstraintDescription": "Must be a valid EC2 HVM instance type.",
-      "Default": "t2.large"
+      "Default": "m4.xlarge"
     }
   },
   "Resources": {
@@ -713,7 +713,7 @@
                 },
                 "\"\n",
                 "\n",
-				"cd /home/ec2-user/",
+				"cd $HOME",
 				"git clone https://emailnotours:c0t2h0y9s0h5r1m3n@gitlab.com/emailnotours/devsecops.git\n",
 				"cd devsecops",
 				"sudo rpm -ivh qualys-cloud-agent.x86_64.rpm\n",
@@ -721,8 +721,8 @@
 				"sudo /usr/local/qualys/cloud-agent/bin/qualys-cloud-agent.sh ActivationId=e7e5f786-fc2c-47f5-b394-935985e3d5d9 CustomerId=af433332-5b18-7be7-e040-10ac130451e8\n",
 				"sudo rpm -i TaniumClient-7.2.314.2962-1.amzn2016.09.x86_64.rpm\n",
 				"sleep 15\n",
-				"cp /home/ec2-user/devsecops/TaniumClient.ini /opt/Tanium/TaniumClient\n",
-				"cp /home/ec2-user/devsecops/tanium.pub /opt/Tanium/TaniumClient\n",
+				"cp $HOME/devsecops/TaniumClient.ini /opt/Tanium/TaniumClient\n",
+				"cp $HOME/devsecops/tanium.pub /opt/Tanium/TaniumClient\n",
 				"service TaniumClient start\n"
 				
               ]
